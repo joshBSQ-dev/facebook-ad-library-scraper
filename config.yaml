@@ -1,52 +1,101 @@
 # This access_token is a User access token w/ permission to access API
-access_token: <FILL IN>
+access_token: EAAL1TqFHlrABO9Ukn8NrGufZC669UcJ5pEfPzPNxbuHXLet7crfwY8jk1ZB7GZBDHfbJeNuXCwRr9aptCZByPlDPj5QxNLgcDJtEJh8LRvx6k5YUggP0MiVufYxw8H4HApPhob0NQaZAqQX1rsbHo6tP7MLZALfvaAhLjQtc6ZB0jD4kRb5DbbMFDiE1p2y1ASAhumSajDKdefQcESPLy2ZCSzKKRzsWpZC5HIic5Bivtxd0ZD
 
 page_total: 100   # Should be a maximum of 1,000
 search_total: 100   # You can query a maximum of 5,000 ads
 
-ad_active_status: ACTIVE   # ACTIVE, INACTIVE, or ALL
+ad_active_status: ALL   # ACTIVE, INACTIVE, or ALL
 
 # You can provide search terms and/or page IDs.
-search_terms: aoc
-# search_page_ids:   # Max 10 pages
-#   - !!str 153080620724   # page_ids should be str, not int
-#   - !!str 416707608450706
+#search_terms: aoc
+search_page_ids:
+  - !!str 612471195588500 # - burrow
+  - !!str 70267159212 # - lands end
+  - !!str 70267159212 # - fashion to figure
+  - !!str 75681651558 # - talbots
+  - !!str 179450065439629 # - chewy
+
+# Extra brand page IDs:
+  # !!str 2009466829272479 - fenty
+  # !!str 10236898932 - torrid
+  # !!str 25297200265 - vans
+  # !!str 23402039579 - converse
+  # !!str 7133041750 - pacsun
+  # !!str 95181800661 - levis
+  # !!str 20395377020 - old navy
+  # !!str 612471195588500 - burrow
+  # !!str 70267159212 - lands end
+  # !!str 70267159212 - fashion to figure
+  # !!str 75681651558 - talbots
+  # !!str 179450065439629 - chewy
+
 
 # Fields for querying all possible metadata from the API
+# These are v22.0 field names
 query_fields:
+  - id
   - ad_creation_time
-  - ad_creative_body
-  - ad_creative_link_caption
-  - ad_creative_link_description
-  - ad_creative_link_title
+  - ad_creative_bodies
+  - ad_creative_link_titles
+  - ad_creative_link_captions
+  - ad_creative_link_descriptions
   - ad_delivery_start_time
   - ad_delivery_stop_time
   - ad_snapshot_url
   - demographic_distribution
-  - funding_entity
   - impressions
+  - spend
   - page_id
   - page_name
-  - region_distribution
-  - spend
+  - publisher_platforms
+  - languages
+  - ad_creative_link_url
+  - effective_status
+  - created_time
+  - updated_time
+  - body
+  - status
+  - is_active
+  - link_url
+  - title
+  - caption
+  - description
 
 # Fields which are included in the main CSV, including derived fields
 output_fields:
   - ad_id
   - page_id
   - page_name
-  - ad_creative_body
-  - ad_creative_link_caption
-  - ad_creative_link_description
-  - ad_creative_link_title
+  - promotional_text
   - ad_delivery_start_time
   - ad_delivery_stop_time
-  - funding_entity
+  - ad_creation_time
+  - created_time
+  - updated_time
+  - ad_creative_bodies
+  - status
+  - effective_status
+  - ad_active_status
+  - is_active
+  - body
+  - title
+  - caption
+  - description
+  # - ad_creative_links
+  # - ad_creative_link_titles
+  # - ad_creative_link_captions
+  # - ad_creative_link_descriptions
+  - link_url
+  - image_name
+  - image_link
+  - image_description
   - impressions_min
   - impressions_max
   - spend_min
   - spend_max
   - ad_url
+  - publisher_platforms
+  - languages
 
 # Fields for the unnested CSVs
 demo_fields:
